@@ -1,5 +1,7 @@
 package pro.sky;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static int[] generateRandomArray() {
@@ -126,6 +128,103 @@ public class Main {
             } else {
                 System.out.println(reverseFullName[index]);
                 break;
+            }
+        }
+        System.out.println("Массивы. Задачи повышенной сложности");
+        //task 5
+        System.out.println("Задание 5");
+        int[][] matrix = new int[3][3];
+        int diagonalNumber = 1;
+        for (int i = 0; i < matrix.length; i++) {
+            if (i % 2 != 0) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    if (j % 2 != 0) {
+                        matrix[i][j] = diagonalNumber;
+                    } else {
+                        matrix[i][j] = 0;
+                    }
+                }
+            } else {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    if (j % 2 == 0) {
+                        matrix[i][j] = diagonalNumber;
+                    } else {
+                        matrix[i][j] = 0;
+                    }
+                }
+            }
+        }
+        for (int[] row : matrix) {
+            for (int column : row) {
+                System.out.print(column + " ");
+            }
+            System.out.println();
+        }
+        //task 6
+        System.out.println("Задание 6");
+        int[] array1 = {5, 4, 3, 2, 1};
+        int[] array2 = Arrays.copyOf(array1, array1.length);
+        System.out.println("Исходный массив");
+        for (int i = 0; i < array1.length; i++) {
+            array2[array1.length - 1 - i] = array1[i];
+            System.out.print(array1[i] + " ");
+        }
+        System.out.println();
+        System.out.println("Преобразованный массив");
+        array1 = Arrays.copyOf(array2, array2.length);
+        for (int i = 0; i < array1.length; i++) {
+            System.out.print(array1[i] + " ");
+        }
+        System.out.println();
+        //task 7
+        System.out.println("Задание 7");
+        int[] array = {5, 4, 3, 2, 1};
+        int exchange;
+        System.out.println("Исходный массив");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+        System.out.println("Преобразованный массив");
+        for (int i = 0; i < array.length / 2; i++) {
+            exchange = array[array.length - 1 - i];
+            array[array.length - 1 - i] = array[i];
+            array[i] = exchange;
+        }
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+        //task 8
+        System.out.println("Задание 8");
+        System.out.print("Массив: ");
+        int[] arrayMix = {-6, 2, 5, -8, 8, 6, 4, -7, 12, 1};
+        for (int i = 0; i < arrayMix.length; i++) {
+            System.out.print(arrayMix[i] + " ");
+        }
+        System.out.println();
+        System.out.println("Пара чисел массива, разница между которыми равна -2");
+        for (int i = 0; i < arrayMix.length - 1; i++) {
+            for (int j = i + 1; j < arrayMix.length; j++) {
+                if (arrayMix[i] + arrayMix[j] == -2) {
+                    System.out.println(arrayMix[i] + " " + arrayMix[j]);
+                    i = arrayMix.length - 1;
+                    j = arrayMix.length;
+                }
+            }
+        }
+        System.out.println("Задание 9");
+        System.out.print("Массив: ");
+        for (int i = 0; i < arrayMix.length; i++) {
+            System.out.print(arrayMix[i] + " ");
+        }
+        System.out.println();
+        System.out.println("Пары чисел массива, разница между которыми равна -2");
+        for (int i = 0; i < arrayMix.length - 1; i++) {
+            for (int j = i + 1; j < arrayMix.length; j++) {
+                if (arrayMix[i] + arrayMix[j] == -2) {
+                    System.out.println(arrayMix[i] + " " + arrayMix[j]);
+                }
             }
         }
     }
